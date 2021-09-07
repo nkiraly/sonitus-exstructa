@@ -23,7 +23,7 @@ URL = 'https://github.com/nkiraly/sonitus-exstructa'
 EMAIL = 'kiraly.nicholas@gmail.com'
 AUTHOR = 'Nicholas Kiraly'
 REQUIRES_PYTHON = '>=3.8.0'
-VERSION = '0.0.1'
+VERSION = '0.1.0'
 
 INSTALL_REQUIREMENTS_PATH = "./requirements.txt"
 REQUIRED = _get_file_lines(INSTALL_REQUIREMENTS_PATH)

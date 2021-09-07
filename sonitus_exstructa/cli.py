@@ -11,7 +11,7 @@ from pythonjsonlogger import jsonlogger
 
 from sonitus_exstructa.event_generator import (
     DEFAULT_ACTORS,
-    DEFAULT_VERBS,
+    DEFAULT_ACTIONS,
     DEFAULT_TARGETS,
     DEFAULT_STATES,
     DEFAULT_FAILURES,
@@ -54,11 +54,11 @@ logger = structlog.get_logger()
 
 _common_sonitus_exstructa_args_and_options = [
     click.option('--actor', envvar='SONITUS_EXSTRUCTA_ACTOR', multiple=True, default=DEFAULT_ACTORS,
-                 help='The actors that perform verbs on targets'),
-    click.option('--verb', envvar='SONITUS_EXSTRUCTA_VERB', multiple=True, default=DEFAULT_VERBS,
-                 help='The verbs that actors perform on targets'),
+                 help='The actors that perform actions on targets'),
+    click.option('--action', envvar='SONITUS_EXSTRUCTA_ACTION', multiple=True, default=DEFAULT_ACTIONS,
+                 help='The actions that actors perform on targets'),
     click.option('--target', envvar='SONITUS_EXSTRUCTA_TARGET', multiple=True, default=DEFAULT_TARGETS,
-                 help='The names of targets that actors perform verbs on'),
+                 help='The names of targets that actors perform actions on'),
     click.option('--state', envvar='SONITUS_EXSTRUCTA_STATE', multiple=True, default=DEFAULT_STATES,
                  help='The states that that actors get targets in'),
     click.option('--failure', envvar='SONITUS_EXSTRUCTA_FAILURE', multiple=True, default=DEFAULT_FAILURES,
@@ -86,7 +86,7 @@ def sonitus_exstructa():
 @common_sonitus_exstructa_args_and_options
 def generate_command(
     actor,
-    verb,
+    action,
     target,
     state,
     failure
@@ -97,7 +97,7 @@ def generate_command(
     generator = EventGenerator(
         logger,
         actor,
-        verb,
+        action,
         target,
         state,
         failure,

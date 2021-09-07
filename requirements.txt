@@ -1,0 +1,4 @@
+boltons
+click
+python-json-logger
+structlog

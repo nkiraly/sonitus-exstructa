@@ -1,0 +1,6 @@
+pylint
+autopep8
+pycodestyle
+pep8
+nose
+coverage
